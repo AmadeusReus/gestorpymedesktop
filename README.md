@@ -137,7 +137,7 @@ Complete documentation is available in the `/docs` folder, organized by feature 
 
 ### Testing
 - **Jest** - Unit testing framework
-- **Cypress** - End-to-end testing
+- **Playwright** - End-to-end testing for Electron + React
 - **Testing Library** - Component testing utilities
 
 ## 📦 Available Scripts
@@ -154,8 +154,8 @@ npm run lint       # Check code style
 npm run test       # Run unit tests
 npm run test:watch # Run tests in watch mode
 npm run test:coverage # Generate coverage report
-npx cypress open   # Open Cypress test runner
-npx cypress run    # Run E2E tests headless
+npx playwright test # Run E2E tests with Playwright
+npx playwright test --ui # Run E2E tests with UI mode
 ```
 
 ### Database
