@@ -1,0 +1,127 @@
+/* src/styles/components/ConfirmDialog.css */
+
+.confirm-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.confirm-dialog {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.3s ease-in-out;
+  min-width: 300px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.confirm-dialog__header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+.confirm-dialog__header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.confirm-dialog__body {
+  padding: 20px;
+}
+
+.confirm-dialog__body p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.confirm-dialog__footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  background-color: #f9f9f9;
+}
+
+.confirm-dialog__footer button {
+  flex: 1;
+  max-width: 150px;
+}
+
+/* Variantes de diálogo */
+.confirm-dialog--danger .confirm-dialog__header {
+  background-color: #ffebee;
+  border-bottom-color: #c62828;
+}
+
+.confirm-dialog--danger .confirm-dialog__header h3 {
+  color: #c62828;
+}
+
+.confirm-dialog--warning .confirm-dialog__header {
+  background-color: #fff3e0;
+  border-bottom-color: #f57c00;
+}
+
+.confirm-dialog--warning .confirm-dialog__header h3 {
+  color: #f57c00;
+}
+
+.confirm-dialog--info .confirm-dialog__header {
+  background-color: #e3f2fd;
+  border-bottom-color: #1976d2;
+}
+
+.confirm-dialog--info .confirm-dialog__header h3 {
+  color: #1976d2;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .confirm-dialog {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .confirm-dialog__footer {
+    flex-direction: column;
+  }
+
+  .confirm-dialog__footer button {
+    max-width: 100%;
+  }
+}

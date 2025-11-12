@@ -1,0 +1,378 @@
+/* src/styles/screens/TurnoScreen.css */
+
+.turno-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: var(--spacing-lg);
+}
+
+/* Estado de carga */
+.turno-screen .loading-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  font-size: 16px;
+}
+
+/* Mensajes de error y éxito */
+.error-card,
+.success-card {
+  margin-bottom: var(--spacing-lg);
+}
+
+.error-message,
+.success-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+
+.error-message {
+  background-color: var(--color-bg-error);
+  color: var(--color-text-danger);
+}
+
+.success-message {
+  background-color: var(--color-bg-success);
+  color: var(--color-text-success);
+}
+
+/* Información del turno */
+.turno-screen__turno-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+}
+
+.turno-screen__turno-info p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.turno-screen__turno-info strong {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Alerta cuando otro empleado creó el turno */
+.turno-screen__alert {
+  background-color: var(--color-bg-warning);
+  color: var(--color-text-warning);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Información general */
+.turno-screen__info {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.5;
+}
+
+/* Acciones (botones) */
+.turno-screen__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+/* Secciones específicas por rol */
+.turno-screen__empleado,
+.turno-screen__supervisor,
+.turno-screen__admin {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Botones de transacciones */
+.turno-screen__transaction-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.turno-screen__transaction-buttons button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* Formulario de transacción */
+.turno-screen__transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-lg) 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Tabla de transacciones */
+.turno-screen__transactions-table {
+  margin-top: var(--spacing-lg);
+  overflow-x: auto;
+}
+
+.turno-screen__transactions-table h4 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.turno-screen__transactions-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.turno-screen__transactions-table thead {
+  background-color: var(--color-bg-secondary);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.turno-screen__transactions-table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.turno-screen__transactions-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.turno-screen__transactions-table tbody tr:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.turno-screen__transactions-table td {
+  padding: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+/* Sección de cierre de turno */
+.turno-screen__cierre {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+}
+
+.cierre-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cierre-section label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.cierre-section input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: border-color 0.2s ease;
+}
+
+.cierre-section input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.cierre-resultado {
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-primary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.cierre-resultado h4 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.cierre-resultado p {
+  margin: var(--spacing-sm) 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.cierre-resultado p strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.cierre-resultado .diferencia {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: var(--spacing-md);
+}
+
+.cierre-resultado .diferencia.sobrante {
+  background-color: var(--color-bg-success);
+  color: var(--color-text-success);
+  border: 1px solid var(--color-success);
+}
+
+.cierre-resultado .diferencia.faltante {
+  background-color: var(--color-bg-error);
+  color: var(--color-text-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.cierre-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.cierre-actions button {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .turno-screen {
+    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+
+  .turno-screen__turno-info {
+    padding: var(--spacing-md);
+  }
+
+  .error-message,
+  .success-message {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .turno-screen__transaction-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .turno-screen__transaction-form {
+    padding: var(--spacing-md);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .turno-screen__transactions-table {
+    font-size: 12px;
+  }
+
+  .turno-screen__transactions-table th,
+  .turno-screen__transactions-table td {
+    padding: var(--spacing-sm);
+  }
+
+  .turno-screen__cierre {
+    padding: var(--spacing-md);
+  }
+
+  .cierre-resultado {
+    padding: var(--spacing-md);
+  }
+
+  .cierre-resultado p {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .cierre-actions {
+    flex-direction: column;
+  }
+
+  .cierre-actions button {
+    width: 100%;
+  }
+}

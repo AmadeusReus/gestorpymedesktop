@@ -1,0 +1,219 @@
+/* src/styles/screens/GestionScreen.css */
+
+.gestion-screen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg);
+}
+
+/* Tabs */
+.gestion-screen__tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--spacing-lg);
+  overflow-x: auto;
+}
+
+.gestion-screen__tabs .tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.gestion-screen__tabs .tab:hover {
+  color: var(--color-text-primary);
+}
+
+.gestion-screen__tabs .tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Content */
+.gestion-screen__content {
+  min-height: 300px;
+}
+
+/* Stats Grid */
+.gestion-screen__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.stat span {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat strong.positive {
+  color: var(--color-success);
+}
+
+.stat strong.negative {
+  color: var(--color-danger);
+}
+
+/* Turnos Actions */
+.gestion-screen__turnos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.gestion-screen__turnos p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.turnos-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.info-box {
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-warning);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--color-warning);
+}
+
+.info-box p {
+  margin: 0;
+  color: var(--color-text-warning);
+  font-size: 14px;
+}
+
+/* Historial Table */
+.gestion-screen__historial {
+  overflow-x: auto;
+}
+
+.gestion-screen__historial table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.gestion-screen__historial thead {
+  background-color: var(--color-bg-secondary);
+}
+
+.gestion-screen__historial th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.gestion-screen__historial td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.gestion-screen__historial tbody tr:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Config Form */
+.gestion-screen__config {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+}
+
+.config-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.config-item label {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.config-item input,
+.config-item select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: white;
+  color: var(--color-text-primary);
+}
+
+.config-item input:disabled {
+  background-color: var(--color-bg-secondary);
+  cursor: not-allowed;
+}
+
+.config-item input:focus,
+.config-item select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .gestion-screen {
+    padding: var(--spacing-md);
+  }
+
+  .gestion-screen__tabs {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .gestion-screen__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gestion-screen__config {
+    grid-template-columns: 1fr;
+  }
+
+  .turnos-actions {
+    flex-direction: column;
+  }
+}

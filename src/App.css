@@ -1,0 +1,94 @@
+/* src/App.css */
+
+/* --- Contenedor Principal --- */
+/* Reemplaza a #root */
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* --- Esqueleto del Formulario --- */
+.form-wrapper {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-title {
+  text-align: center;
+  color: #1a2b4d;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- Inputs y Botones --- */
+.form-input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  width: calc(100% - 26px); /* Ajuste por padding y borde */
+}
+
+.form-input:focus {
+  border-color: #0052cc;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2);
+}
+
+.form-button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #0052cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.form-button:hover {
+  background-color: #0041a3;
+}
+
+.form-button:disabled {
+  background-color: #aebfd1;
+  cursor: not-allowed;
+}
+
+/* --- Mensajes y Estados --- */
+.form-error {
+  color: #d93025;
+  background-color: #fbe9e7;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.form-success {
+  color: #006644;
+  background-color: #e6f4ea;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Eliminamos todos los estilos de .logo, .card, etc. */

@@ -1,0 +1,222 @@
+/* src/styles/screens/AuditoriaScreen.css */
+
+.auditoria-screen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg);
+}
+
+/* Stats Grid */
+.auditoria-screen__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stat-value.success {
+  color: var(--color-success);
+}
+
+.stat-value.warning {
+  color: var(--color-warning);
+}
+
+/* Filtros */
+.auditoria-screen__filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.filter-group label {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: white;
+  color: var(--color-text-primary);
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Tabla */
+.auditoria-screen__table {
+  overflow-x: auto;
+}
+
+.auditoria-screen__table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.auditoria-screen__table thead {
+  background-color: var(--color-bg-secondary);
+  position: sticky;
+  top: 0;
+}
+
+.auditoria-screen__table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.auditoria-screen__table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.auditoria-screen__table tbody tr.confirmed {
+  background-color: rgba(34, 197, 94, 0.02);
+}
+
+.auditoria-screen__table tbody tr.pending {
+  background-color: rgba(217, 119, 6, 0.02);
+}
+
+.auditoria-screen__table tbody tr:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge--confirmed {
+  background-color: var(--color-bg-success);
+  color: var(--color-text-success);
+}
+
+.badge--pending {
+  background-color: var(--color-bg-warning);
+  color: var(--color-text-warning);
+}
+
+/* Acciones */
+.auditoria-screen__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  white-space: nowrap;
+}
+
+/* Estados */
+.auditoria-screen__loading,
+.auditoria-screen__empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+}
+
+/* Footer */
+.auditoria-screen__footer {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  justify-content: flex-end;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .auditoria-screen__table {
+    font-size: 12px;
+  }
+
+  .auditoria-screen__table th,
+  .auditoria-screen__table td {
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .auditoria-screen {
+    padding: var(--spacing-md);
+  }
+
+  .auditoria-screen__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .auditoria-screen__filters {
+    grid-template-columns: 1fr;
+  }
+
+  .auditoria-screen__table table {
+    font-size: 11px;
+  }
+
+  .auditoria-screen__actions {
+    flex-direction: column;
+  }
+
+  .auditoria-screen__footer {
+    flex-direction: column-reverse;
+  }
+}

@@ -1,0 +1,137 @@
+/* src/styles/screens/AdminNegocioSelector.css */
+
+.admin-negocio-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  padding: var(--spacing-lg);
+}
+
+.admin-negocio-selector__container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.admin-negocio-selector__card {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Estados de carga, error y vacío */
+.admin-negocio-selector__loading,
+.admin-negocio-selector__error,
+.admin-negocio-selector__empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.admin-negocio-selector__loading p,
+.admin-negocio-selector__empty p {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+}
+
+.admin-negocio-selector__error {
+  background-color: var(--color-bg-error);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.admin-negocio-selector__error p {
+  color: var(--color-text-danger);
+  margin: 0;
+}
+
+/* Información y grid */
+.admin-negocio-selector__info {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.admin-negocio-selector__negocios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.admin-negocio-selector__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.admin-negocio-selector__item {
+  width: 100%;
+}
+
+/* Tarjeta de negocio */
+.admin-negocio-selector__negocio-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.admin-negocio-selector__negocio-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.admin-negocio-selector__negocio-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.admin-negocio-selector__negocio-role {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-negocio-selector__select-btn {
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .admin-negocio-selector {
+    min-height: auto;
+    padding: var(--spacing-md);
+  }
+
+  .admin-negocio-selector__container {
+    max-width: 100%;
+  }
+
+  .admin-negocio-selector__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-negocio-selector__loading,
+  .admin-negocio-selector__error,
+  .admin-negocio-selector__empty {
+    padding: var(--spacing-lg);
+  }
+}
